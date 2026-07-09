@@ -35,7 +35,7 @@ const PaginaLogin = () => {
                         ev.preventDefault()
                         const datos = new FormData(ev.target)
 
-                        fetch("http://localhost:8000/api/login/signin", {
+                        fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/login/signin`, {
                             method: "POST",
                             body: JSON.stringify({ email: datos.get('email'), password: datos.get('password') }),
                             headers: {

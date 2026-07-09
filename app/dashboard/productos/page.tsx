@@ -45,7 +45,7 @@ export default function PageProductos() {
     const router = useRouter()
     useEffect(() => {
         if (token) {
-            fetch("http://localhost:8000/api/auth/productos", {
+            fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/productos`, {
                 headers: { "Authorization": `Bearer ${token}` }
             }).then(async (res) => {
                 const body = await res.json();
@@ -82,7 +82,7 @@ export default function PageProductos() {
                                     width={100}
                                     height={100}
                                     alt="producto"
-                                    src={"http://localhost:8000" + producto.imagen} />
+                                    src={process.env.NEXT_PUBLIC_BACKEND_URL + producto.imagen} />
                                 {producto.nombre}</TableCell>
                             <TableCell>{producto.precio}</TableCell>
                             <TableCell>{producto.stock}</TableCell>

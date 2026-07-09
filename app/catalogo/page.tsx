@@ -16,7 +16,7 @@ const Catalogo = ({ producto }: { producto: producto }) => {
 
     useEffect(() => {
 
-        fetch("http://localhost:8000/prueba", {
+        fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/prueba`, {
             method: "GET"
 
         }).then(async (res) => {

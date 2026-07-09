@@ -32,7 +32,7 @@ export const ModalModificarProducto = ({ producto, open, setOpen }: { producto: 
                     ev.preventDefault()
                     let form = new FormData(ev.target)
 
-                    fetch("http://localhost:8000/api/auth/productos/" + producto.id, {
+                    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/productos/` + producto.id, {
                         method: "PUT",
                         body: form,
                         headers: {

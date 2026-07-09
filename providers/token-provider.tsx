@@ -18,7 +18,7 @@ const TokenProvider = ({ children }: any) => {
     useEffect(() => {
         setLoading(true);
         if (!token) {
-            fetch("http://localhost:8000/api/refresh_token", {
+            fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/refresh_token`, {
                 method: "POST",
                 credentials: "include"
             }).then(async res => {

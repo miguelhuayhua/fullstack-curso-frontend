@@ -26,7 +26,7 @@ export const ModalCrearProducto = () => {
                     ev.preventDefault()
                     let form = new FormData(ev.target)
 
-                    fetch("http://localhost:8000/api/auth/productos", {
+                    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/productos`, {
                         method: "POST",
                         body: form,
                         headers: {
